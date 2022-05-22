@@ -1,1 +1,56 @@
-thienanhworns
+#include <stdio.h>
+
+void nhapMang(int a[], int n){
+	int i;
+	for(i=0;i<n;i++){
+		printf("a[%d]: ",i);
+		scanf("%d",&a[i]);
+		
+	}
+}
+
+void xuatMang(int a[],int n){
+   int i;
+   for (i=0;i< n;i++){
+   	printf("%d ", a[i]);
+   }
+      
+   
+}
+
+int lonThu2(int a[], int n){
+    int lonNhat, lonNhi;
+    if (a[0] > a[1]){
+        lonNhat = a[0];
+        lonNhi = a[1];
+    }else{
+        lonNhat = a[1];
+        lonNhi = a[0];
+    }
+    for(int i = 2; i < n; i++){
+        if(a[i] >= lonNhat){
+            lonNhi = lonNhat;
+            lonNhat = a[i];
+        }else if (a[i] > lonNhi){
+            lonNhi = a[i];
+        }
+    }
+    return lonNhi;
+}
+
+int main(){
+int a[50], n;
+printf("Co bao nhieu so nguyen ban muon nhap: ");
+scanf("%d",&n);
+
+nhapMang(a,n);
+xuatMang(a,n);
+
+printf("Phan tu lon thu  2 la : %d",lonThu2(a,n));
+	
+
+return 0;
+}
+		
+
+
